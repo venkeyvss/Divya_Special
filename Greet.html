@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Birthday Card</title>
+  <style>
+    /* Dark background gradient */
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #000428, #004e92);
+      background-size: 200% 200%;
+      animation: gradientAnimation 10s ease infinite;
+      color: #ffffff;
+    }
+
+    /* Background animation */
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Card Styling */
+    .card {
+      position: relative;
+      width: 300px;
+      height: 450px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      perspective: 1000px;
+    }
+
+    /* Front and Back Flip Animation */
+    .card .front, .card .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 15px;
+      transition: transform 0.6s ease;
+    }
+
+    /* Front Side */
+    .card .front {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-size: cover;
+      background-position: center;
+      background-image: url("local-image.jpg"); /* Adjust this path for local image */
+    }
+
+    /* Rotate effect */
+    .card:hover .front {
+      transform: rotateY(-180deg);
+    }
+
+    /* Back Side */
+    .card .back {
+      background-color: #1b1f24;
+      color: #ffffff;
+      transform: rotateY(180deg);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Flip back on hover */
+    .card:hover .back {
+      transform: rotateY(0deg);
+    }
+
+    /* Text styling */
+    .text-container {
+      font-family: 'Nobile', sans-serif;
+      color: #e6e6e6;
+      text-align: center;
+      animation: textFadeIn 1s ease-in-out;
+      padding: 0 15px;
+    }
+
+    /* Headline Styling */
+    #head {
+      font-size: 1.6em;
+      font-weight: bold;
+      margin-top: 20px;
+      color: #00bcd4;
+    }
+
+    /* Greeting message */
+    .card p {
+      font-size: 1em;
+      line-height: 1.5;
+      color: #b3b3b3;
+      font-style: italic;
+      margin: 10px 0;
+    }
+
+    /* Animation for text fade-in */
+    @keyframes textFadeIn {
+      0% { opacity: 0; transform: translateY(-10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+	p{
+	padding-right:15px;
+	}
+
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <div class="front ">
+    <div class="imgset">
+      <img width="100%" src="img\2.jpg" alt="Greeting Image">
+    </div>
+  </div>
+
+  <div class="back" >
+    <div class="text-container">
+      <p id="head">Happy Birthday!</p>
+      <h5>Divya 🤍</h5>
+      <p>I hope your special day will bring you lots of happiness, love, and fun. You deserve them a lot. Enjoy!</p>
+	  <p>Divya Enaku una Evlo Pudikum nu laa enaku thariyaathu sami...!✨ Una Ramba pudikum Saami. Un Kooda Life longa erukanum Sami thonum.😊 Un Life la Happy ah Santhosama ma eru sami na unaku support ah erupan. Ella Situationla youm 😊.🤍</P>
+      <p style="margin-bottom:0">Hope your day goes great!</p>
+    </div>
+	<div class="">
+              <a href="Bday\index.html"><button class="btn"><b> Last One:) --></b></button></a>
+        </div>
+  </div>
+  
+</div>
+
+</body>
+<style>
+.card{
+ height: 83%;
+}
+.icons{
+transform:scale(0.1);
+margin:0;
+paddin:0;
+}
+/* 
+  Project: CSS Glowing Button
+  Created: Sunday, 06 March 2022
+  Author: Jamshid Elmi 
+  Tutorial: https://youtu.be/b_8fHNIHFk4
+*/
+ 
+/* button */
+.btn {
+  margin: 10px;
+  padding: 15px 40px;
+  border: none;
+  outline: none;
+  color: #FFF;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 12px;
+  color:Yellow;
+}
+.btn::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+/* glow */
+.btn::before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #FF0000, #FF7300, #FFFB00, #48FF00,
+    #00FFD5, #002BFF, #FF00C8, #FF0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 600%;
+  z-index: -1;
+  width: calc(100% + 4px);
+  height:  calc(100% + 4px);
+  filter: blur(8px);
+  animation: glowing 20s linear infinite;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+  opacity: 1;
+}
+
+@keyframes glowing {
+  0% {background-position: 0 0;}
+  50% {background-position: 400% 0;}
+  100% {background-position: 0 0;}
+}
+
+/* hover */
+.btn:hover::before,.btn {
+  opacity: 1;
+}
+
+.btn:active:after {
+  background: transparent;
+}
+
+.btn:active{
+  color: #000;
+  font-weight: bold;
+}
+</style>
+</html>

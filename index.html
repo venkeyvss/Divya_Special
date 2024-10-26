@@ -1,0 +1,111 @@
+<!-- 
+    Project: Glowing Card
+    Created: Thursday, 15 January 2022
+    Author: Jamshid Elmi 
+    Tutorial: https://youtu.be/nPcEatO4wco
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style\style.css">
+	<link rel="stylesheet" href="style\stylebtn.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Divya</title>
+</head>
+
+
+
+<body>
+<audio class="song" loop>
+    <source src="music\music.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+
+    <div class="card " id='first' >
+
+        <div class="image-container">
+            <img src="img\ig.jpg" alt="avatar">
+        </div>
+
+        <h2>Brithday Wish From Your Venkatesh </h2>
+        <p class="card_class"> <b>திவ்யா என்னோட சின்ன சர்ப்ரைஸ் சாமி. எப்போமே ஹேப்பியா இரு திவ்யா 🤍. ஜாலியா சந்தோசமா இரு 😊.  இது உனக்கு புடிக்கும்னு நெனகிரன். இன்னிக்கி உனக்கு special Day Sami ni Happy ah Eruka num.</b>
+		</p>
+		 
+        <div class="icons ">
+              <a href="Greet.html"><button class="btn "><b>Click Pannu Sami :)</b></button></a>
+        </div>
+
+<script>
+ window.addEventListener('load', () => {
+    Swal.fire({
+        title: 'Do you want to play music in the background?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes',
+        cancelButtonText: 'No',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            document.querySelector('.song').play();
+             
+        } 
+    });
+});
+
+</script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </div>
+<main id="second">
+      <div id="gasses">
+        <div class="gas he">
+          <span class="number">Happy</span>
+          <h2 class="symbol">D</h2>
+          <p class="name">En Saami</p>
+        </div>
+        <div class="gas ne">
+          <span class="number">Brithday</span>
+          <h2 class="symbol">I</h2>
+          <p class="name">En Chellam</p>
+        </div>
+        <div class="gas ar">
+          <span class="number">My Dear</span>
+          <h2 class="symbol">V</h2>
+          <p class="name">En Thangam</p>
+        </div>
+        <div class="gas kr">
+          <span class="number">Divya</span>
+          <h2 class="symbol">Y</h2>
+          <p class="name"> En Pattu</p>
+        </div>
+        <div class="gas xe">
+          <span class="number">LOVE YOU</span>
+          <h2 class="symbol">A</h2>
+          <p class="name">Love You So Much💙🤍</p>
+        </div>
+		<div class="gas ve" id='show' onclick='showElement()'>
+          <span class="number">Itha Click Pannu Divya</span>
+          <h2 class="symbol ho"><ion-icon name="play-outline"></ion-icon></h2>
+          <p class="name"><b>See Next💕</b></p>
+        </div>
+      </div>
+    </main>
+    
+</body>
+<script>
+function showElement() {
+      document.getElementById("first").style.display = "block";  
+	  document.getElementById("second").style.display = "none";  
+    }
+
+</script
+ <!-- Greensock -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <!-- Sweetalert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</html>
